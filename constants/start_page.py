@@ -1,7 +1,6 @@
 class StartPageConst:
     """Stores constants related to start page"""
 
-    # Navigate to Basket->Product
     ADULT_WINDOW_XPATH = './/div[@class="sc-6e5c79b5-1 gMeQCW"]'
     YES_BUTTON_XPATH = './/a[@class="sc-6e5c79b5-4 gwJZmj"]'
     NO_BUTTON_XPATH = './/a[@href="https://www.google.com"]'
@@ -10,7 +9,6 @@ class StartPageConst:
 
     START_PAGE_BESTSELERS_TEXT = 'Бестселери'
 
-    # Subscribe
     MENU_XPATH = './/div[@class="sc-86c356ae-3 gSawTJ"]'
     IMPORT_XPATH ='.//a[@href="/ua/sobstvennyy-import"]'
 
