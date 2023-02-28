@@ -1,12 +1,11 @@
 class StartPageConst:
     """Stores constants related to start page"""
-
+    #confirm age YES/NO
     ADULT_WINDOW_XPATH = './/div[@class="sc-6e5c79b5-1 gMeQCW"]'
     YES_BUTTON_XPATH = './/a[@class="sc-6e5c79b5-4 gwJZmj"]'
     NO_BUTTON_XPATH = './/a[@href="https://www.google.com"]'
 
     START_PAGE_BESTSELERS_XPATH = './/h2[@class="sc-f91cb35f-1 bncsWx"]'
-
     START_PAGE_BESTSELERS_TEXT = 'Бестселери'
 
     MENU_XPATH = './/div[@class="sc-86c356ae-3 gSawTJ"]'

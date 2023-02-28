@@ -69,3 +69,11 @@ class StartPage(BasePage):
         """Verify Error for empty Email field"""
         assert self.compare_element_text(xpath=self.const.ERROR_EMPTY_EMAIL_XPATH,
                                          text=self.const.ERROR_EMPTY_EMAIL_TEXT)
+
+    @log_wrapper
+    def unconfirm_age(self):
+        """UNconfirm age"""
+        self.click(xpath=self.const.NO_BUTTON_XPATH)
+
+        from pages.unconfirm_age_page import UnconfirmPage
+        return UnconfirmPage(self.driver)

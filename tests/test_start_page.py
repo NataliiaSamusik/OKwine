@@ -11,7 +11,6 @@ from constants.base import BaseConstants
 class TestStartPage:
     """Stores tests for start page """
 
-    # Open Product page via basket page
     def test_confirm_age(self, start_page, confirm_age):
         """
         - Pre-conditions:
@@ -81,3 +80,16 @@ class TestStartPage:
         start_page.sign_up_empty_email(random_user)
         # Verify error
         start_page.verify_error_empty_email()
+
+    def test_unconfirm_age(self, start_page):
+        """
+        - Pre-conditions:
+            - Open start page
+            - Seleck NO in confirmation window
+        - Steps:
+            - Verify what page is opened
+        """
+        # Seleck NO in confirmation window
+        unconfirm_age_page = start_page.unconfirm_age()
+        # Verify what page is opened
+        unconfirm_age_page.verify_google_unconfirm()
