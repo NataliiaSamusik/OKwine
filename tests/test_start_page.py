@@ -6,6 +6,7 @@ import pytest
 from conftest import start_page, product_page
 from constants.base import BaseConstants
 
+
 @pytest.mark.parametrize("browser", [BaseConstants.CHROME])
 class TestStartPage:
     """Stores tests for start page """
@@ -31,9 +32,9 @@ class TestStartPage:
             - Navigate to Import page via Menu
             - Verify Import page
         """
-        #Navigate to Import page via Menu
+        # Navigate to Import page via Menu
         import_page = start_page.navigate_to_import_page()
-        #Verify Import page
+        # Verify Import page
         import_page.verify_import_page_opened()
 
     def test_product_page(self, start_page, confirm_age):
@@ -49,7 +50,6 @@ class TestStartPage:
         product_page = start_page.navigate_to_product_page()
         # Verify that correct page is opened
         product_page.verify_product_page_opened()
-
 
     def test_login_empty_user(self, start_page, confirm_age, random_user):
         """
@@ -67,10 +67,17 @@ class TestStartPage:
         # Verify error
         start_page.verify_error_empty_login_page()
 
-
-
-
-
-
-
-
+    def test_sign_up_empty_email(self, start_page, confirm_age, random_user):
+        """
+        - Pre-conditions:
+            - Open start page
+            - Confirm age
+        - Steps:
+            - Leave email field empty
+            - Click on Sign up button
+            - Verify error
+        """
+        # Leave field email empty/Click on sign up button
+        start_page.sign_up_empty_email(random_user)
+        # Verify error
+        start_page.verify_error_empty_email()

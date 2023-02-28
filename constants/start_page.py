@@ -19,6 +19,17 @@ class StartPageConst:
     ERROR_LOGIN_XPATH = './/div[@class="sc-ed3d24c3-0 fgqYqX"]'
     ERROR_LOGIN_TEXT = 'Введіть пароль'
 
+    SIGN_UP_WINDOW_XPATH = './/div[@class="sc-3bc511a6-10 emBIAA"]'
+    SIGN_UP_USERNAME_FIELD_XPATH = './/input[@id="firstNameId"]'
+    SIGN_UP_SURNAME_FIELD_XPATH = './/input[@id="lastNameId"]'
+    SIGN_UP_EMAIL_FIELD_XPATH = './/input[@name="email"]'
+    SIGN_UP_PASSWORD_FIELD_XPATH = ".//input[@id='passwordId']"
+    SIGN_UP_CONFIRM_PASSWORD_FIELD_XPATH = ".//input[@id='passwordConfirmId']"
+    SIGN_UP_BUTTON_XPATH = './/div[@class="sc-3bc511a6-11 sc-3bc511a6-16 fGkcVF bPfAyg"]'
+
+    ERROR_EMPTY_EMAIL_XPATH = './/div[@class="sc-ed3d24c3-0 fgqYqX"]'
+    ERROR_EMPTY_EMAIL_TEXT = 'Введіть пошту'
+
     PRODUCT_INFO_XPATH = './/a[@href="/ua/product/liker-dead-mans-fingers-dmf-raspberry-rum-cream-liqueur-17-07l"]'
 
 

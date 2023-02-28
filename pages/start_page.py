@@ -2,6 +2,7 @@ from constants.start_page import StartPageConst
 from pages.base_page import BasePage
 from pages.utils import wait_until_ok, log_wrapper
 
+
 class StartPage(BasePage):
     def __init__(self, driver):
         super().__init__(driver)
@@ -16,7 +17,8 @@ class StartPage(BasePage):
     @log_wrapper
     def verify_start_page_opened(self):
         """Verify Start page opened"""
-        assert self.compare_element_text(xpath=self.const.START_PAGE_BESTSELERS_XPATH, text=self.const.START_PAGE_BESTSELERS_TEXT)
+        assert self.compare_element_text(xpath=self.const.START_PAGE_BESTSELERS_XPATH,
+                                         text=self.const.START_PAGE_BESTSELERS_TEXT)
 
     @log_wrapper
     def navigate_to_import_page(self):
@@ -49,5 +51,21 @@ class StartPage(BasePage):
         """Verify ERROR for empty login field"""
         assert self.is_element_exists(xpath=self.const.ERROR_LOGIN_XPATH)
 
+    @log_wrapper
+    @wait_until_ok(timeout=10, period=1)
+    def sign_up_empty_email(self, user):
+        """Sign up using provided values"""
+        self.click(xpath=self.const.MENU_XPATH)
+        self.click(xpath=self.const.LOGIN_XPATH)
+        self.click(xpath=self.const.SIGN_UP_WINDOW_XPATH)
+        self.fill_field(xpath=self.const.SIGN_UP_USERNAME_FIELD_XPATH, value=user.username)
+        self.fill_field(xpath=self.const.SIGN_UP_SURNAME_FIELD_XPATH, value=user.surname)
+        self.fill_field(xpath=self.const.SIGN_UP_PASSWORD_FIELD_XPATH, value=user.password)
+        self.fill_field(xpath=self.const.SIGN_UP_CONFIRM_PASSWORD_FIELD_XPATH, value=user.password)
+        self.click(self.const.SIGN_UP_BUTTON_XPATH)
 
-
+    @log_wrapper
+    def verify_error_empty_email(self):
+        """Verify Error for empty Email field"""
+        assert self.compare_element_text(xpath=self.const.ERROR_EMPTY_EMAIL_XPATH,
+                                         text=self.const.ERROR_EMPTY_EMAIL_TEXT)
