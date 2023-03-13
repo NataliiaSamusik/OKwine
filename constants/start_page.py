@@ -31,6 +31,7 @@ class StartPageConst:
 
     PRODUCT_INFO_XPATH = './/a[@href="/ua/product/liker-dead-mans-fingers-dmf-raspberry-rum-cream-liqueur-17-07l"]'
 
+    BASKET_ICON_XPATH ='.//div[@class="sc-86c356ae-3 gSauUm"]'
 
 
 

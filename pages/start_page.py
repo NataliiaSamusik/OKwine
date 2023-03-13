@@ -77,3 +77,11 @@ class StartPage(BasePage):
 
         from pages.unconfirm_age_page import UnconfirmPage
         return UnconfirmPage(self.driver)
+
+    @log_wrapper
+    def basket_by_default(self):
+        """How does basket page look by default"""
+        self.click(xpath=self.const.BASKET_ICON_XPATH)
+
+        from pages.basket_page import BasketPage
+        return BasketPage(self.driver)

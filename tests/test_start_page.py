@@ -93,3 +93,18 @@ class TestStartPage:
         unconfirm_age_page = start_page.unconfirm_age()
         # Verify what page is opened
         unconfirm_age_page.verify_google_unconfirm()
+
+
+    def test_basket_by_default(self, start_page, confirm_age):
+        """
+        - Pre-conditions:
+            - Open start page
+            - Confirm age
+        - Steps:
+            - Click Basket icon
+            - Verify that correct page is opened
+        """
+        # Click on any Product
+        basket_page = start_page.basket_by_default()
+        # Verify that correct page is opened
+        basket_page.verify_basket_page_empty_by_default()
